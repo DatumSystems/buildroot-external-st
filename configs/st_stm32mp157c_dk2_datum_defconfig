@@ -1,5 +1,6 @@
 BR2_arm=y
 BR2_cortex_a7=y
+BR2_PACKAGE_OVERRIDE_FILE="/home/mcarlin/dev/brick/br/stmicro/github/buildroot-external-st/board/stmicroelectronics/stm32mp1/override.mk"
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TARGET_GENERIC_HOSTNAME="buildroot-datum"
 BR2_TARGET_GENERIC_ISSUE="Welcome to Buildroot-Datum"
@@ -10,7 +11,8 @@ BR2_ROOTFS_POST_IMAGE_SCRIPT="$(BR2_EXTERNAL_ST_PATH)/board/stmicroelectronics/s
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,STMicroelectronics,linux)v5.15-stm32mp-r1.tar.gz"
-BR2_LINUX_KERNEL_DEFCONFIG="multi_v7"
+BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="/home/mcarlin/dev/brick/br/buildroot-external-datum/board/datum/brick/linux.config"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(LINUX_DIR)/arch/arm/configs/fragment-01-multiv7_cleanup.config $(LINUX_DIR)/arch/arm/configs/fragment-02-multiv7_addons.config $(BR2_EXTERNAL_ST_PATH)/board/stmicroelectronics/stm32mp1/linux-disable-etnaviv.config"
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 BR2_LINUX_KERNEL_INTREE_DTS_NAME="stm32mp157c-dk2"
@@ -43,7 +45,8 @@ BR2_TARGET_UBOOT=y
 BR2_TARGET_UBOOT_BUILD_SYSTEM_KCONFIG=y
 BR2_TARGET_UBOOT_CUSTOM_TARBALL=y
 BR2_TARGET_UBOOT_CUSTOM_TARBALL_LOCATION="$(call github,STMicroelectronics,u-boot)v2021.10-stm32mp-r1.tar.gz"
-BR2_TARGET_UBOOT_BOARD_DEFCONFIG="stm32mp15"
+BR2_TARGET_UBOOT_USE_CUSTOM_CONFIG=y
+BR2_TARGET_UBOOT_CUSTOM_CONFIG_FILE="/home/mcarlin/dev/brick/br/buildroot-external-datum/board/datum/brick/uboot.config"
 BR2_TARGET_UBOOT_NEEDS_PYLIBFDT=y
 # BR2_TARGET_UBOOT_FORMAT_BIN is not set
 BR2_TARGET_UBOOT_FORMAT_CUSTOM=y

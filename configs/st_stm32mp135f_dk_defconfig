@@ -1,5 +1,6 @@
 BR2_arm=y
 BR2_cortex_a7=y
+BR2_PACKAGE_OVERRIDE_FILE="${BR2_EXTERNAL_ST_PATH}/board/stmicroelectronics/stm32mp1/override.mk"
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_MDEV=y
 BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_ST_PATH)/board/stmicroelectronics/stm32mp1/overlay/"
